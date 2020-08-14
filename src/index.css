@@ -12,8 +12,8 @@ code {
     monospace;
 }
 
- .navbar-list li{
-  margin: 0 1rem;
+.active{
+ font-weight: bold;
 }
 
 .navbar-logo{
