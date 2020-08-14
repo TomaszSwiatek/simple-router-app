@@ -1,14 +1,17 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, withRouter } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = (props) => {
+    setTimeout(() => {
+        props.history.push('/contact')
+    }, 3000)
     return (
         <div className="navbar-fixed">
             <nav className="nav-wrapper red darken-3">
                 <div className="container">
-                    <a href="#!" className="brand-logo left navbar-logo">Sheep Times</a>
+                    <Link to="/" className="brand-logo left navbar-logo">Sheep Times</Link>
                     <ul className="right " >
-                        <li><NavLink exact to="/">Home</NavLink></li>
+                        <li><NavLink exact to="/cool-things">Cool things</NavLink></li>
                         <li><NavLink to="/about">About</NavLink></li>
                         <li><NavLink to="/contact">Contact</NavLink></li>
                     </ul>
@@ -18,5 +21,5 @@ const Navbar = () => {
         </div>
     )
 }
-
-export default Navbar
+// this is extra hoc which can give as eztra router power - props properties.
+export default withRouter(Navbar)

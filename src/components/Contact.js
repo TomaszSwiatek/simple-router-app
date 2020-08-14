@@ -1,9 +1,10 @@
 import React from 'react';
+import Rainbow from '../hoc/Rainbow'
 // we can get props becouse of route done to this component in App.js. This is extrapower to router - access to props properties
 const Contact = (props) => {
-    setTimeout(() => {
-        props.history.push('/about');  //push to about PAGE AFTER 2 SECONDS
-    }, 2000)
+    // setTimeout(() => {
+    //     props.history.push('/about');  //push to about PAGE AFTER 2 SECONDS
+    // }, 2000)
     return (
         <div className="container">
             <h4 className="center">This is the contact page</h4>
@@ -12,4 +13,4 @@ const Contact = (props) => {
     )
 }
 
-export default Contact
+export default Rainbow(Contact)
