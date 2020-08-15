@@ -2,9 +2,9 @@ import React from 'react';
 import { Link, NavLink, withRouter } from 'react-router-dom'
 
 const Navbar = (props) => {
-    setTimeout(() => {
-        props.history.push('/contact')
-    }, 3000)
+    // setTimeout(() => {
+    //     props.history.push('/contact')
+    // }, 6000)
     return (
         <div className="navbar-fixed">
             <nav className="nav-wrapper red darken-3">
