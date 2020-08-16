@@ -19,3 +19,19 @@ code {
 .navbar-logo{
   margin: 0 1rem;
 }
+
+.post img{
+position: absolute;
+width: 260px;
+left: -120px;
+top: calc(50% ); /*center vertically*/
+transform: translateY(-50%);/*center vertically*/
+opacity: 0.2;
+
+}
+
+.post{
+  position: relative;
+  padding-left: 150px;
+  overflow: hidden;
+}

@@ -1,11 +1,49 @@
 import React from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom'
+import Sheep from '../sheep.png'
 
-const Home = () => {
-    return (
-        <div className="container">
+class Home extends React.Component {
+    state = {
+        posts: []
+    }
+    componentDidMount() {
+        axios.get('https://jsonplaceholder.typicode.com/posts/')
+            .then(res => {
+                console.log(res);
+                this.setState({
+                    posts: res.data.slice(0, 10)
+                });
+            })
+    }
+    render() {
+        const { posts } = this.state
+        const postList = posts.length ? (
+            posts.map(post => {
+                return (
+                    <div className="post card" key={post.id}>
+                        <img src={Sheep} alt="little sheep as a background" />
+                        <div className="card-content">
+                            <Link to={'/' + post.id}>
+                                <span className="card-title red-text">{post.title}</span>
+                            </Link>
+                            <p>{post.body}</p>
+                        </div>
+                    </div>
+                )
+            })
+        ) : (
+                <div className="center">No posts to show</div>
+            );
 
-        </div>
-    )
+        return (
+            <div>
+                <div className="container">
+                    {postList}
+                </div>
+            </div>
+        )
+    }
 }
 
 export default Home
