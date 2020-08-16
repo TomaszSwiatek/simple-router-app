@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Sheep2 from '../img/sheep2.png'
+
 
 class Post extends Component {
     state = {
@@ -18,7 +20,8 @@ class Post extends Component {
     render() {
 
         const post = this.state.post ? (
-            <div className="post">
+            <div className="post-content">
+                <img src={Sheep2} alt="Another sheep on the site to fill in background" />
                 <h4 className="center">{this.state.post.title}</h4>
                 <p>{this.state.post.body}</p>
             </div>

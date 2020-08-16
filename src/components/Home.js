@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
-import Sheep from '../sheep.png'
+import Sheep from '../img/sheep.png'
 
 class Home extends React.Component {
     state = {
