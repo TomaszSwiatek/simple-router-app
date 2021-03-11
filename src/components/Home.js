@@ -7,6 +7,7 @@ class Home extends React.Component {
     state = {
         posts: []
     }
+
     componentDidMount() {
         axios.get('https://jsonplaceholder.typicode.com/posts/')
             .then(res => {
